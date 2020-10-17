@@ -28,24 +28,27 @@
     <form class="col-lg-10" action="" method="post" enctype="multipart/form-data" class="form-horizontal">
         <div class="row form-group">
             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nama Tugas</label></div>
-            <div class="col-12 col-md-9"><input type="text" id="text-input" name="txtnama_tugas" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
+            <div class="col-12 col-md-9"><input type="text" id="text-input" name="txtnama_tugas" placeholder="Isikan Nama Tugas" class="form-control"><small class="form-text text-muted">Nama Tugas Harus Benar</small></div>
         </div>
 
             <div class="row form-group">
                 <div class="col col-md-3"><label for="select" class=" form-control-label">Kategori Tugas</label></div>
                 <div class="col-12 col-md-9">
-                    <select name="option_id_kategori" id="select" class="form-control">
-                        <option value="0">Please select</option>
-                        <option value="1">Option #1</option>
-                        <option value="2">Option #2</option>
-                        <option value="3">Option #3</option>
+                    <select name="optionid_kategori" id="select" class="form-control">
+                    
+                    @foreach($data_kategori as $kategori)
+                    
+                    <option value ={{$kategori->id}}>
+                   {{$kategori->nama_kategori}}</option>
+                    @endforeach
                     </select>
+                
                 </div>
             </div>
 
               <div class="row form-group">
                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">Keterangan Tugas</label></div>
-                <div class="col-12 col-md-9"><input type="text" id="text-input" name="text-input" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
+                <div class="col-12 col-md-9"><input type="text" id="text-input" name="txtketerangan_tugas" placeholder="Isikan Keterangan Tugas" class="form-control"><small class="form-text text-muted">Kategori Tugas Harus Benar</small></div>
              </div>
 
             <div class="row form-group">
@@ -53,13 +56,10 @@
                 <div class="col col-md-9">
                     <div class="form-check-inline form-check">
                         <label for="inline-radio1" class="form-check-label ">
-                            <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input">One
+                            <input type="radio" id="inline-radio1" name="radiostatus_tugas" value="option1" class="form-check-input">Masih Berjalan
                         </label>
                         <label for="inline-radio2" class="form-check-label ">
-                            <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input">Two
-                        </label>
-                        <label for="inline-radio3" class="form-check-label ">
-                            <input type="radio" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input">Three
+                            <input type="radio" id="inline-radio2" name="radiostatus_tugas" value="option2" class="form-check-input">Selesai
                         </label>
                     </div>
                 </div>
