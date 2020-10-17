@@ -28,7 +28,8 @@ class TugasController extends Controller
      */
     public function create()
     {
-        return view('admin.tugas.create');
+        $pagename = 'Form Input Tugas';
+        return view('admin.tugas.create', compact('pagename'));
     }
 
     /**
