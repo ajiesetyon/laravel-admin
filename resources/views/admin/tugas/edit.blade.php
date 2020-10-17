@@ -39,11 +39,12 @@
         </div>
 
         @endif
-    <form class="col-lg-10" action="{{route('tugas.store')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+    <form class="col-lg-10" action="{{route('tugas.update', $data->id)}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+       @method('PATCH')
        @csrf
         <div class="row form-group">
             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nama Tugas</label></div>
-            <div class="col-12 col-md-9"><input type="text" id="text-input" name="txtnama_tugas" placeholder="Isikan Nama Tugas" class="form-control"><small class="form-text text-muted">Nama Tugas Harus Benar</small></div>
+            <div class="col-12 col-md-9"><input type="text" id="text-input" name="txtnama_tugas" value="{{$data->nama_tugas}}"placeholder="Isikan Nama Tugas" class="form-control"><small class="form-text text-muted">Nama Tugas Harus Benar</small></div>
         </div>
 
             <div class="row form-group">
@@ -53,7 +54,13 @@
                     
                     @foreach($data_kategori as $kategori)
                     
-                    <option value ={{$kategori->id}}>
+                    <option value ={{$kategori->id}}
+                    @if($kategori->id==$data->id_kategori)
+                    selected
+
+
+                    @endif
+                    >
                    {{$kategori->nama_kategori}}</option>
                     @endforeach
                     </select>
@@ -63,7 +70,7 @@
 
               <div class="row form-group">
                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">Keterangan Tugas</label></div>
-                <div class="col-12 col-md-9"><input type="text" id="text-input" name="txtketerangan_tugas" placeholder="Isikan Keterangan Tugas" class="form-control"><small class="form-text text-muted">Kategori Tugas Harus Benar</small></div>
+                <div class="col-12 col-md-9"><input type="text" id="text-input" name="txtketerangan_tugas" value="{{$data->ket_tugas}}" placeholder="Isikan Keterangan Tugas" class="form-control"><small class="form-text text-muted">Kategori Tugas Harus Benar</small></div>
              </div>
 
             <div class="row form-group">
@@ -71,10 +78,10 @@
                 <div class="col col-md-9">
                     <div class="form-check-inline form-check">
                         <label for="inline-radio1" class="form-check-label ">
-                            <input type="radio" id="inline-radio1" name="radiostatus_tugas" value="0" class="form-check-input">Masih Berjalan
+                            <input type="radio" id="inline-radio1" name="radiostatus_tugas" value="0" {{$data->status_tugas==0?'checked':''}} class="form-check-input">Masih Berjalan
                         </label>
                         <label for="inline-radio2" class="form-check-label ">
-                            <input type="radio" id="inline-radio2" name="radiostatus_tugas" value="1" class="form-check-input">Selesai
+                            <input type="radio" id="inline-radio2" name="radiostatus_tugas" value="1" {{$data->status_tugas==1?'checked':''}}  class="form-check-input">Selesai
                         </label>
                     </div>
                 </div>
@@ -84,7 +91,7 @@
     </div>
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary btn-sm">
-                <i class="fa fa-dot-circle-o"></i> Simpan
+                <i class="fa fa-dot-circle-o"></i> Update
             </button>
             <button type="reset" class="btn btn-danger btn-sm">
                 <i class="fa fa-ban"></i> Reset
