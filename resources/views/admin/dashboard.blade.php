@@ -23,7 +23,7 @@
 
             <div class="col-sm-12">
                 <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                    <span class="badge badge-pill badge-success">Success</span> You successfully read this important alert message.
+                    <span class="badge badge-pill badge-success">Success</span> Anda berhasil masuk ke admin.
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -153,7 +153,7 @@
                     <i class="fa fa-facebook"></i>
                     <ul>
                         <li>
-                            <span class="count">40</span> k
+                            <span class="count">40</span> 
                             <span>friends</span>
                         </li>
                         <li>
@@ -172,7 +172,7 @@
                     <i class="fa fa-twitter"></i>
                     <ul>
                         <li>
-                            <span class="count">30</span> k
+                            <span class="count">30</span> 
                             <span>friends</span>
                         </li>
                         <li>
@@ -191,7 +191,7 @@
                     <i class="fa fa-linkedin"></i>
                     <ul>
                         <li>
-                            <span class="count">40</span> +
+                            <span class="count">40</span>
                             <span>contacts</span>
                         </li>
                         <li>
@@ -210,7 +210,7 @@
                     <i class="fa fa-google-plus"></i>
                     <ul>
                         <li>
-                            <span class="count">94</span> k
+                            <span class="count">94</span> 
                             <span>followers</span>
                         </li>
                         <li>
